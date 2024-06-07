@@ -48,9 +48,8 @@ void loop() {
         Serial.println(serv2pos);
         int yPositionInt = serv2pos.toInt();
         if(yPositionInt >= 0 && yPositionInt <= 90) {
-            
+            s2.write(yPositionInt);
         }
-        s2.write(yPositionInt);
       }
 
       if(optservo == "t" || optservo == "T") {
