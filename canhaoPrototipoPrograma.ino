@@ -11,7 +11,7 @@ void setup() {
   s2.attach(D2);
   s3.attach(D5);
 
-  s1.write(90);
+  s1.write(105);
   s2.write(90);
   s3.write(160);
 
@@ -46,8 +46,11 @@ void loop() {
       if(optservo == "y" || optservo == "Y") {
         serv2pos = readString.substring(1, (readString.length() -1));
         Serial.println(serv2pos);
-
-        s2.write(serv2pos.toInt());
+        int yPositionInt = serv2pos.toInt();
+        if(yPositionInt >= 0 && yPositionInt <= 90) {
+            
+        }
+        s2.write(yPositionInt);
       }
 
       if(optservo == "t" || optservo == "T") {
